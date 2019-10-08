@@ -174,11 +174,11 @@ function tracing1() {
   };
 
   // set values in the args to pass the assert
-  let arg1 = "", arg2 = "", arg3 = "";
+  let arg1 = "y", arg2 = "x", arg3 = "z";
   let returnval = f(arg1, arg2, arg3);
   console.assert(returnval === "zyx", "1 a");
 
-  arg1 = "", arg2 = "", arg3 = "";
+  arg1 = "z", arg2 = "x", arg3 = "y";
   returnval = f(arg1, arg2, arg3);
   console.assert(returnval === "yzx", "1 b");
 
@@ -194,7 +194,7 @@ function tracing2() {
   };
 
   // set values in the args to pass the assert
-  let arg1 = "", arg2 = "", arg3 = "";
+  let arg1 = "x", arg2 = "y", arg3 = "z";
   let returnVal = f(arg1, arg3, arg2);
   console.assert(returnVal === "yxz", "returnVal should be yxz");
 
@@ -217,12 +217,12 @@ function tracing3() {
   };
 
   // set values in the args to pass the assert
-  let arg1 = "", arg2 = "", arg3 = "";
+  let arg1 = "z", arg2 = "x", arg3 = "y";
   let returnVal = f(arg1, arg2, arg3);
   console.assert(returnVal === "yxz", "returnVal should be yxz");
 
 
-  arg1 = "", arg2 = "", arg3 = "";
+  arg1 = "z", arg2 = "y", arg3 = "x";
   returnVal = f(arg3, arg2, arg1);
   console.assert(returnVal === "zyx", "returnVal should be zyx");
 
@@ -239,11 +239,11 @@ function tracing4() {
   // pass x, y and z to the function in the right order
   // don't change their values!
   let x = "x", y = "y", z = "z";
-  let returnVal = f();
+  let returnVal = f(x,z,y);
   console.assert(returnVal === "yxz", "returnVal should be yxz");
 
   x = "x", y = "z", z = "y";
-  returnVal = f();
+  returnVal = f(z,x,y);
   console.assert(returnVal === "zyx", "returnVal should be zyx");
 
 }
@@ -260,11 +260,11 @@ function tracing5() {
   // pass x, y and z to the function in the right order
   // don't change their values!
   let x = "x", y = "y", z = "z";
-  let returnVal = f();
+  let returnVal = f(z,x,y);
   console.assert(returnVal === "xzy", "returnVal should be xzy");
 
   x = "y", y = "x", z = "z";
-  returnVal = f();
+  returnVal = f(x,z,y);
   console.assert(returnVal === "zyx", "returnVal should be zyx");
 
 }
@@ -275,7 +275,7 @@ function tracing6() {
 
   // concatinate the params to pass the tests
   function f(param1, param2, param3) {
-    const result = null;
+    const result = param3 +param1+param2;;
     return result;
   };
 
@@ -295,7 +295,7 @@ function tracing7() {
 
   // concatinate the params to pass the tests
   function f(param1, param2, param3) {
-    const result = null;
+    const result = param2+param3+param1;;
     return result;
   };
 
