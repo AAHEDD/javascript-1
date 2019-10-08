@@ -18,7 +18,8 @@ function reverseHandler() {
   const toReverse = document.getElementById('reverse-input').value;
 
   // pass user input through core logic (write this! it doesn't work)
-  const reversed = `reverse ${toReverse}`;
+  let arr = toReverse.split('').reverse().join('');
+  const reversed = `reverse ${arr}`;
 
   // report result to user (this works, no need to change it!)
   const outputField = document.getElementById('reverse-output');
@@ -30,3 +31,4 @@ function reverseHandler() {
 };
 const reverseButton = document.getElementById('reverse-button');
 reverseButton.addEventListener('click', reverseHandler);
+
