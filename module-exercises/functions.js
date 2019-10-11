@@ -314,17 +314,17 @@ evaluate(tracing7);
 function tracing8() {
 
   // arrange the parameters to pass the asserts
-  function f() {
+  function f(param1,param2,param3) {
     var result = param2 + param1 + param3;
     return result;
   };
 
   let arg1 = "z", arg2 = "y", arg3 = "x";
-  let returnVal = f(arg1, arg2, arg3);
+  let returnVal = f(arg3, arg2,arg1);
   console.assert(returnVal === "yxz", "returnVal should be yxz");
 
   arg1 = "x", arg2 = "z", arg3 = "y";
-  returnVal = f(arg3, arg1, arg2);
+  returnVal = f(arg2, arg1, arg3);
   console.assert(returnVal === "xzy", "returnVal should be xzy");
 
 }
@@ -334,17 +334,17 @@ evaluate(tracing8);
 function tracing9() {
 
   // arrange the parameters to pass the asserts
-  function f() {
+  function f(param1,param2,param3) {
     var result = param1 + param2 + param3;
     return result;
   };
 
   let arg1 = "y", arg2 = "z", arg3 = "x";
-  let returnVal = f(arg1, arg2, arg3);
+  let returnVal = f(arg3, arg1, arg2);
   console.assert(returnVal === "xyz", "returnVal should be xyz");
 
   arg1 = "z", arg2 = "x", arg3 = "y";
-  returnVal = f(arg3, arg1, arg2);
+  returnVal = f(arg2, arg3, arg1);
   console.assert(returnVal === "xyz", "returnVal should be xyz");
 
 }
@@ -354,21 +354,21 @@ evaluate(tracing9);
 function tracing10() {
 
   // do what needs to be done!
-  function f() {  // <--
+  function f(param1,param2,param3,param4) {  // <--
     var result = param3 + param1 + param2 + param4;
     return result;
   };
 
-  let arg1 = "", arg2 = "", arg3 = "", arg4 = ""; // <--
+  let arg1 = "y", arg2 = "z", arg3 = "x", arg4 = "w"; // <--
   let returnVal = f(arg1, arg2, arg3, arg4);
   console.assert(returnVal === "xyzw", "returnVal should be xyzw");
 
   arg1 = "z", arg2 = "w", arg3 = "y", arg4 = "x";
   returnVal = f(arg3, arg1, arg4, arg2);
-  console.assert(returnVal === "", "returnVal should be ?"); // <--
+  console.assert(returnVal === "xyzw", "returnVal should be ?"); // <--
 
   arg1 = "z", arg2 = "w", arg3 = "y", arg4 = "x";
-  returnVal = f();                                   // <--
+  returnVal = f(arg3,arg2,arg1,arg4);                                   // <--
   console.assert(returnVal === "zywx", "returnVal should be zywx");
 
 }
