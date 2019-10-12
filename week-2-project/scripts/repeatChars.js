@@ -16,8 +16,47 @@ const repeatCharsTests = [
   { name: 'sixth', args: [''], expected: '' },
   { name: 'seventh', args: [' '], expected: '    ' },
 ];
+
+
+
+
 function repeatChars(str) {
   // write this!
+    let letters = /[A-Za-z]/;
+    let repeated = '',
+    src = str.split(''),
+    ctr1 = '';
+    let splChars = "^*|,\":<>[]{}`\';()@&$#%\\\/";
+
+    
+    for (var x = 0; x < src.length; x++) {
+     
+
+                          if(src[x].match(letters))
+                        {
+                          for (var y = 0; y < 3; y++) {
+                            ctr1 += src[x];
+                          }
+                        }
+                      else
+                      if (splChars.indexOf(src[x] ) != -1) {
+                        for (var z = 0; z < 4; z++) {
+                          ctr1 += src[x];
+                        }
+                      } else if (!isNaN(src[x])){
+                        for (var y = 0; y < 2; y++) {
+                          ctr1 += src[x];
+                        }
+                      }
+           
+            
+      repeated += ctr1;
+      ctr1 = '';
+    }
+  
+ 
+   return repeated;
+  
 }
 evaluate(repeatChars, repeatCharsTests);
 

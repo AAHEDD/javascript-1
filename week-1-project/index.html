@@ -1,56 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>Acme Web Deisgn | Welcome</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Week1 Javascript Project</h1>
+      </div>
+    </header>
 
-<html lang="en">
+    <section id="section-sort">
+      <div class="centered">
+        <div id='sort-container'>
+          <input style='width:400px' id='sort-input' placeholder='characters to sort' /> <br>
+          <button id='sort-button'>sort it</button> <br>
+        
+          <pre id='sort-output'></pre>
+          </div>
+    </section>
 
-<head>
-  <meta charset="utf-8">
+    <section id="section-reverse">
+      <div id='reverse-container'>
+        <input style='width:400px' id='reverse-input' placeholder='characters to reverse' /> <br>
+        <button id='reverse-button'>reverse it</button> <br>
+        <pre id='reverse-output'></pre>
+        </div>
+      </div>
+    </section>
 
-  <title>week 1 project</title>
-  <meta name="description" content="week 2 project">
- 
+    <section id="section-devowel">
+      <div id='devowel-container'>
+        <input style='width:400px' id='devowel-input' placeholder='string to devowel' /> <br>
+        <button id='devowel-button'>devowel it</button> <br>
+        <pre id='devowel-output'></pre>
+      </div>
+    </section>
 
-</head>
+    <section id="section-repeat">
+      <div id='repeat-container'>
+      <input style='width:400px' id='repeat-string-input' placeholder='characters to repeat' /> <br>
+      <input style='width:400px' id='repeat-number-input' placeholder='# of times to repeat' /> <br>
+      <button id='repeat-button'>repeat it</button> <br>
+      <pre id='repeat-output'></pre>
+      </div>
+    </section>
 
-<body>
-
-
-  <div id='sort-container'>
-    <input style='width:400px' id='sort-input' placeholder='characters to sort' /> <br>
-    <button id='sort-button'>sort it</button> <br>
-
-    <pre id='sort-output'></pre>
-  </div>
-
-
-  <div id='reverse-container'>
-    <input style='width:400px' id='reverse-input' placeholder='characters to reverse' /> <br>
-    <button id='reverse-button'>reverse it</button> <br>
-    <pre id='reverse-output'></pre>
-  </div>
-
-  <div id='devowel-container'>
-    <input style='width:400px' id='devowel-input' placeholder='string to devowel' /> <br>
-    <button id='devowel-button'>devowel it</button> <br>
-    <pre id='devowel-output'></pre>
-  </div>
-
-
-  <div id='repeat-container'>
-    <input style='width:400px' id='repeat-string-input' placeholder='characters to repeat' /> <br>
-    <input style='width:400px' id='repeat-number-input' placeholder='# of times to repeat' /> <br>
-    <button id='repeat-button'>repeat it</button> <br>
-    <pre id='repeat-output'></pre>
-  </div>
-
-
-
-
-  <script src="sort-handler.js"></script>
-  <script src="reverse-handler.js"></script>
-  <script src="devowel-handler.js"></script>
-  <script src="repeat-handler.js"></script>
-
-
-</body>
-
+                            <script src="sort-handler.js"></script>
+                            <script src="reverse-handler.js"></script>
+                            <script src="devowel-handler.js"></script>
+                            <script src="repeat-handler.js"></script>
+  </body>
 </html>

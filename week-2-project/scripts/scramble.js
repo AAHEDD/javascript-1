@@ -23,6 +23,20 @@ const scrambleTests = [
 ];
 function scramble(str) {
   // write me!
+  {
+    var scrambled = '',
+    src = str.split(''),
+    randomNum;
+  
+ while (src.length > 1)
+ {
+    randomNum = Math.floor(Math.random() * src.length);
+    scrambled += src[randomNum];
+    src.splice(randomNum, 1);
+ }
+   scrambled += src[0];
+   return scrambled;
+}  
 }
 evaluate(scramble, scrambleTests);
 
