@@ -22,8 +22,68 @@ const constantizeTests = [
   { name: 'fifth', args: ['Mandy+Tom = <3'], expected: 'MANDYTOM_' },
   { name: 'sixth', args: ['ALREADY_A_CONSTANT'], expected: 'ALREADY_A_CONSTANT' },
 ];
+
 function constantize(str) {
-  // write me!
+        // write me!
+        let src = str.split(''), ctr1 = '', ctr2='';
+        let splChars = "^*|,\":<>[]{}`\';()@&$#%\\\/";
+        let letters = /[A-Za-z]/;
+        let space= " ";
+        let constanted = '' ;
+        let temp = '';
+
+        
+
+          for (var x = 0; x < src.length; x++) {
+
+             if(src[x].match(space)) {
+            
+              ctr1 = '_';
+              
+            
+          }
+            else if(src[x].match(letters))
+            {
+              
+                ctr1 = src[x].toUpperCase();
+                
+              
+            }
+          else if (splChars.indexOf(src[x] ) != -1) {
+            
+              //ctr2 = src[x];
+              ctr1 = '_';
+            
+          } 
+
+          else if(!isNaN(src[x])) {
+            
+              //ctr2 += 1;
+              ctr1 = '_';
+            
+          }
+
+          
+          ctr2 += ctr1;
+            ctr1 = '';
+
+          }
+
+          
+          let y = true;
+          let I = false;
+
+          for (var z = 0; z < ctr2.length; z++) {
+            if (ctr2[z].match(letters)){
+                constanted +=  ctr2[z];
+                y=true;
+                
+            } else if (ctr2[z] == '_' && y==true) {
+              constanted += '_';
+              y=false;
+            }
+          }
+            return constanted;
 }
 evaluate(constantize, constantizeTests);
 
