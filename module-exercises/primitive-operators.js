@@ -35,16 +35,16 @@ const plusTests = [
   { name: 'number, boolean', args: [1, true], expected: 2 },
   { name: 'number, null', args: [1, null], expected: 1 },
   { name: 'number, undefined', args: [1, undefined], expected: NaN },
-  { name: 'NaN, anything else', args: [NaN, 'anything else!'], expected: NaN },
+  { name: 'NaN, anything else', args: [NaN, 'anything else!'], expected: "NaNanything else!" },
   // fill in the rest of these test cases
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
-  { name: null, args: null, expected: null },
+  { name: 'string, null', args: ["ABC",null], expected: "ABCnull" },
+  { name: 'number, boolean', args: [1e4,false], expected: 10000 },
+  { name: 'NaN,NaN', args: [NaN,NaN], expected: NaN },
+  { name: 'undefined,undefined', args: [undefined,undefined], expected: NaN },
+  { name: 'boolean,boolean', args: [true,false], expected: 1 },
+  { name: 'NaN,undefined', args: [NaN,undefined], expected: NaN },
+  { name: 'number, undefined', args: [1,undefined], expected: NaN },
+  { name: 'string, number', args: ["ABC",6], expected: "ABC6" },
 ];
 function plus(a, b) {
   return a + b;
