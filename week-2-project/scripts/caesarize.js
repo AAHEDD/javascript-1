@@ -73,13 +73,13 @@ function caesarize(str, shiftNum) {
             if (result[z].match(letters)){
               charcode = result[z].charCodeAt() + shiftNum;
               
-              caesarized += result[z].fromCharCode(charcode);
+              caesarized += String.fromCharCode(charcode);
                 
-                y=true;
+                //y=true;
                 
-            } else if (result[z] == ' ' && y==true) {
+            } else if (result[z] == ' ') {
               caesarized += ' ';
-              y=false;
+              ///y=false;
             }
           }
           
@@ -102,7 +102,7 @@ function caesarizeHandler() {
 
 
   // pass user input through core logic (this works!  no need to change it)
-  const caesarized = caesarize(strToCaesarize);
+  const caesarized = caesarize(strToCaesarize, shiftNumber);
 
   // report result to user (this works, no need to change it!)
   const outputField = document.getElementById('caesarize-output');
