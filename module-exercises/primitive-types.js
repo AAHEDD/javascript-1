@@ -151,16 +151,16 @@ evaluate(strictEquality, strictEqualityTests);
 
 
 const strictInequalityTests = [
-  { name: 'NaN', args: [NaN, NaN], expected: false },
-  { name: 'first', args: [true, 'true'], expected: false },
-  { name: 'second', args: [1, '1'], expected: false },
-  { name: 'third', args: ['1', '1'], expected: true },
-  { name: 'fourth', args: [1000, 1e3], expected: true },
-  { name: 'fifth', args: [+0, -0], expected: true },
-  { name: 'sixth', args: [1, 1.0], expected: true },
-  { name: 'seventh', args: ['', ""], expected: true },
-  { name: 'eighth', args: ["", ``], expected: true },
-  { name: 'ninth', args: ['  ', ' '], expected: false},
+  { name: 'NaN', args: [NaN, NaN], expected: true },
+  { name: 'first', args: [true, 'true'], expected: true },
+  { name: 'second', args: [1, '1'], expected: true },
+  { name: 'third', args: ['1', '1'], expected: false },
+  { name: 'fourth', args: [1000, 1e3], expected: false },
+  { name: 'fifth', args: [+0, -0], expected: false },
+  { name: 'sixth', args: [1, 1.0], expected: false },
+  { name: 'seventh', args: ['', ""], expected: false },
+  { name: 'eighth', args: ["", ``], expected: false },
+  { name: 'ninth', args: ['  ', ' '], expected: true},
                               ];
 function strictInequality(a, b) {
   // if type OR value are not the same, returns true

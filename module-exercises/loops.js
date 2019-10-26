@@ -107,8 +107,10 @@ function loopRefactor1() {
 
   // fix the three pieces of this for loop to pass the assert
   let forResult = 0;
-  for (null; null; null) {
+  
+  for (let i=0; i !== 8; i += 2) {
     forResult += i;
+   
   }
 
   console.assert(forResult === whileResult, 'both loops should have the same behavior');
