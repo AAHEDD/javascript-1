@@ -28,5 +28,19 @@ function scramble(str) {
     each of these functions is one step along the way to a scrambled string
     this is a nice exercise in using smaller functions to solve larger problems
   */
+ {
+  let scrambled = '',
+  src = str.split(''),
+  randomNum;
+
+while (src.length > 1)
+{
+  randomNum = Math.floor(Math.random() * src.length);
+  scrambled += src[randomNum];
+  src.splice(randomNum, 1);
+}
+ scrambled += src[0];
+ return scrambled;
+}  
 }
 evaluate(scramble, scrambleTests);

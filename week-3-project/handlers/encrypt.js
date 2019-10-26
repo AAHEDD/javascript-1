@@ -1,3 +1,4 @@
+
 function encryptHandler() {
 
   // read and process user input (this works, no need to change it!)
@@ -11,7 +12,7 @@ function encryptHandler() {
 
 
   // pass user input through core logic (this works!  no need to change it)
-  const encrypted = caesarize(strToEncrypt);
+  const encrypted = caesarize(strToEncrypt,shiftNumber);
 
   // report result to user (this works, no need to change it!)
   const outputField = document.getElementById('encrypted-string-output');
@@ -24,3 +25,4 @@ function encryptHandler() {
 };
 const encryptButton = document.getElementById('encrypt-button');
 encryptButton.addEventListener('click', encryptHandler);
+
