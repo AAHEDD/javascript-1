@@ -164,7 +164,10 @@ body{
     width: 500px;
 }
 
-#encrypted-string-output #decrypted-string-output{
+#encrypted-string-output{
 display: inline;
 
+}
+#decrypted-string-output{
+    display: inline;
 }
