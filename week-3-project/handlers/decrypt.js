@@ -1,9 +1,12 @@
+
+
 function decryptHandler() {
 
   // read and process user input (this works, no need to change it!)
-  const strToDecrypt = document.getElementById('encrypted-string-output').value;
+  /*const strToDecrypt = document.getElementById('encrypted-string-output').value;*/
+  const strToDecrypt = document.getElementById("encrypted-string-output").textContent
 
-  const rawNumInput = document.getElementById('decryption-key-input').value;
+  const rawNumInput = document.getElementById('encryption-key-input').value;
   const shiftNumber = Number(rawNumInput);
   if (isNaN(shiftNumber)) {
     throw new TypeError('decryption key must be a number');
@@ -11,7 +14,7 @@ function decryptHandler() {
 
 
   // pass user input through core logic (this works!  no need to change it)
-  const decrypted = caesarize(strToDecrypt);
+  const decrypted = caesarize(strToDecrypt,-shiftNumber);
 
   // report result to user (this works, no need to change it!)
   const outputField = document.getElementById('decrypted-string-output');
