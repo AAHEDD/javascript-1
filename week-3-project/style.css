@@ -164,10 +164,9 @@ body{
     width: 500px;
 }
 
-#encrypted-string-output{
-display: inline;
-
-}
-#decrypted-string-output{
+pre {
     display: inline;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
 }
